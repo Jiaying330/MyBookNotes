@@ -1,0 +1,366 @@
+body {
+    background-color: #FEFAF6;
+    height: 1000px;
+    letter-spacing: 1.8;
+    line-height: 1.6;
+    color: rgb(70, 70, 70);
+}
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+button {
+    background: none;
+    /* background-color: */
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.nav-item {
+    font-family: "Sedan SC", serif;
+    font-size: 20px;
+}
+
+.home {
+    font-family: "Dancing Script";
+    font-size: 60px;
+    color: #102C57;
+}
+
+.nav-item:hover {
+    color: #f5bb58;
+    /* font-size:30px; */
+}
+
+.home:hover {
+    color: #F1C376;
+    /* font-size: 70px; */
+}
+
+
+.navbar.sticky {
+    position: fixed;
+    /* padding: 20px; */
+    width: 100%;
+    top: 0; 
+    left: 0; 
+    right: 0;
+}
+.navbar.flex-container {
+    padding-top:20px;
+    display: flex;
+    height:100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar input {
+    background-color: #FDF6F0;
+    height: 35px;
+    border: 3px solid #F8E2CF;
+    border-radius: 8px;
+    font-family: "Libre Baskerville", serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 3px;
+}
+
+
+.book-card.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    height: auto;
+}
+
+.book-card.start {
+    height: 110px;
+}
+
+.book-card.book-title {
+    font-family: "Playfair Display";
+    padding-top: 0;
+    margin-bottom: 15px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.book-card.book-title:hover {
+    color:#FEA82F;
+}
+
+.date, .rating {
+    font-size: 15px;
+    margin-bottom: 13px;
+    color: rgb(82, 82, 82);
+    /* line-height: 2; */
+}
+
+.book-card.review {
+    font-family: "EB Garamond", serif;
+    font-size: 20px;
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 10; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    /* white-space: nowrap;  */
+}
+
+.book-card.item {
+    height: 400px;
+    width: 700px;
+    background-color: #EADBC8;
+    padding: 30px;
+    border: solid 30px #DAC0A3;
+    margin-top: 70px;
+}
+
+/* .book-card.item:hover {
+    opacity: 0.3;
+} */
+
+.book-card.grid-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+} 
+
+.book-card.grid-left {
+    display: block;
+    height: 100%;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.book-card.grid-right {
+    padding-top: 0px;
+}
+
+img {
+    height: 300px;
+    padding-top: 15px;
+    width: auto;
+    padding-bottom: 20px;
+}
+
+.notes.container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.note.item {
+    width: 820px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 40px;
+    margin-top:60px;
+}
+
+.notes h1 {
+    margin-bottom: 0;
+    font-family: "Dancing Script";
+    font-size: 50px;
+    color: #102C57;
+}
+.note.actions.container {
+    width: 100%;
+    height: 25px;
+}
+
+.actions-flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav.actions.container {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    left: 0; 
+    right: 0;
+    bottom: 20px;
+}
+.actions.flex-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.actions.flex-container button{
+    padding: 50px;
+}
+
+.actions.flex-container a {
+    padding: 50px;
+}
+
+.notes-content-modify {
+    display: none;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 1;
+}
+
+.new-note-popup > div {
+    display: flex;
+    justify-content:flex-start;
+    padding: 10px;
+}
+
+.new-note-popup > div button {
+    margin-right: 30px;
+}
+
+textarea {
+    padding: 10px;
+    background-color: #F2DAC3;
+    border: 5px solid #5B6D5B;
+    border-radius: 8px;
+    font-family: "Libre Baskerville", serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+#delete-modal-popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    padding: 70px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: #DEBA9D;
+    border-radius: 8px;
+    border: 2px solid #9E7777;
+}
+.delete-popup button {
+    padding: 30px;
+}
+
+.create-book.flex-container {
+    width:50%;
+}
+
+.create-book.grid-container {
+    width: 100%;
+}
+.create-book.grid-container > form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 20px;
+}
+
+form.create-book div {
+    font-family: "Libre Baskerville", serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    /* margin: 5px; */
+}
+
+form.create-book .summary {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+form.create-book textarea {
+    width: 96%;
+    background-color: #FDF6F0;
+    border: 4px solid #F8E2CF;
+    margin-top: 10px;
+}
+
+.create-book input {
+    background-color: #FDF6F0;
+    height: 35px;
+    width: 70%;
+    border: 3px solid #F8E2CF;
+    border-radius: 8px;
+    font-family: "Libre Baskerville", serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.book-delete button{
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+}
+
+.about.container {
+    display: grid;
+    width: 100%;
+    place-items: center;
+}
+.about.container > div {
+    width: 50%;
+    margin-top: 50px;
+    font-family: "Libre Baskerville", serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 30px;
+}
+.about.container > div > h1 {
+    font-family: "Dancing Script";
+    font-size:50px;
+}
+.about.container p {
+    padding-top: 20px;
+}
+
+.about.container span {
+    font-style: italic;
+    font-weight:900;
+}
+
+.contact.container > div{
+    width: 30%
+}
+
+.contact form > div {
+    width: 100%;
+}
+.contact form > div > input {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.contact form > div > textarea {
+    padding: 10px;
+    width: 100%;
+    background-color: #FDF6F0;
+    border: 5px solid #F8E2CF;
+    border-radius: 8px;
+    font-family: "Libre Baskerville", serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+footer > div {
+    padding: 50px;
+}
+
+
+

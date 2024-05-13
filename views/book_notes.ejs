@@ -1,0 +1,136 @@
+<%- include("partials/header.ejs") %>
+
+
+<section>
+    <div class="notes container">
+        <div class="book-card start">
+        </div>
+        <div class="book-card item">
+            <div class="book-card grid-container">
+                <div class="book-card grid-left">
+                    <div>
+                        <img src="<%= book.img %>">
+                    </div>
+                    <div class="book-card rating">
+                        <% if (locals.book.category) { %>
+                        Category: <%= book.category %>
+                        <% } %>
+                    </div>
+                    <div class="book-card rating">
+                        <% if (locals.book.rating) { %>
+                        My Rating: <%= book.rating %> / 10
+                        <% } %>
+                    </div>
+                </div>
+                <div class="book-card grid-right">
+                    <div class="notes book-card book-title"> 
+                        <%= book.title %>
+                    </div>
+                    <div class="book-card review">
+                        <% if (locals.book.summary) { %>
+                        <%= book.summary %>
+                        <% } %>
+                    </div>
+                    <div class="book-card date">
+                        <% if (locals.book.date) { %>
+                        Last Update: <%= book.date %>.
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1>
+            My Notes
+        </h1>
+        <% for( let i = 0; i < notes.length; i++ ) { %>
+            <div class="note item">
+                <div class="note date">
+                    <%= notes[i].created_at %>
+                </div>
+                <div class="note content">
+                    <%= notes[i].note %>
+                    <div class="note actions container">
+                        <div class="actions-flex-container">
+                            <button class="note-edit-button" data-note_id="<%= notes[i].note_id %>" data-note-index="<%= i %>" data-note-content="<%= notes[i].note %>">
+                                <div class="nav-item">
+                                    Edit
+                                </div>
+                            </button>
+                                <button class="note-delete-button" data-note_id="<%= notes[i].note_id %>">
+                                    <div class="nav-item">
+                                        Delete
+                                    </div>
+                                </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <div id="delete-modal-popup">
+        <h1>
+            Are you sure?
+        </h1>
+        <form class="delete-popup" action="/note/delete/" method="POST">
+            <div>
+                <button class="nav-item" type="submit">
+                    Delete
+                </button>
+                <button id="cancel-add-note" type="button" class="nav-item" onClick="closeDeleteModal()">
+                    Never Mind
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="notes-content-modify" id="new-note-popup">
+        <form class="new-note-popup" action="/note/<%= book.book_id %>" method="POST">
+            <div>
+                <button class="nav-item" type="submit">
+                    Add Note
+                </button>
+                <button id="cancel-add-note" type="button" class="nav-item" onclick="closeNewNoteForm()">
+                    Cancel
+                </button>
+            </div>
+            <textarea type="text" name="note" id="note-content" rows="10" cols="70">Enter Your Notes Here</textarea>
+            
+        </div>
+        </form>
+
+    <div class="notes-content-modify" id="edit-note-popup">
+        <form class="new-note-popup" action="/note/edit/" method="POST">
+            <div>
+                <button class="nav-item" type="submit">
+                    Edit
+                </button>
+                <button id="cancel-add-note" type="button" class="nav-item" onclick="closeEditNoteForm()">
+                    Cancel
+                </button>
+            </div>
+            <textarea type="text" name="note" id="note-edit-content" rows="10" cols="70"></textarea>
+            
+        </form>
+    </div>
+
+    <div class="nav actions container">
+        <div class="notes actions flex-container">
+            <button onclick="openNewNoteForm()">
+                <div id="add-note" class="nav-item">
+                    Add Notes
+                </div>
+            </button>
+
+            <a href="/book/edit/<%= book.book_id %>">
+                <div id="delete-book" class="nav-item">
+                   Edit Book 
+                </div>
+            </a>
+        </div>
+    </div>
+
+        
+</section>
+<%- include("partials/footer.ejs") %>

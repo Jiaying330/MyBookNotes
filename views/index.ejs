@@ -1,0 +1,65 @@
+<%- include("partials/header.ejs") %>
+
+<section>
+    <div class="book-card container">
+        <div class="book-card start">
+        </div>
+        <% for( let i = 0; i < books.length; i++ ) { %>
+            <div class="book-card item">
+                <div class="book-card grid-container">
+                    <div class="book-card grid-left">
+                        <div>
+                            <img src="<%= books[i].img %>">
+                        </div>
+                        <div class="book-card rating">
+                            <% if (locals.books[i].category) { %>
+                             Category: <%= books[i].category %>
+                            <% } %>
+                        </div>
+                        <div class="book-card rating">
+                            <% if (locals.books[i].rating) { %>
+                             My Rating: <%= books[i].rating %> / 10
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="book-card grid-right">
+                        <a href="/notes/?book_id=<%= books[i].book_id %>">
+                            <div class="book-card book-title"> 
+                                <%= books[i].title %>
+                            </div>
+                        </a>
+                        <div class="book-card review">
+                            <% if (locals.books[i].summary) { %>
+                             <%= books[i].summary %>
+                            <% } %>
+                        </div>
+                        <div class="book-card date">
+                            <% if (locals.books[i].date) { %>
+                             Last Update: <%= books[i].date %>.
+                            <% } %>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</section>
+
+<div class="nav actions container">
+    <div class="books actions flex-container">
+        <!-- <a href="/book/create">
+            <div class="nav-item">
+                Add Book
+            </div>
+        </a> -->
+
+        <!-- <button>
+            <div id="delete-book" class="nav-item">
+               Delete Book 
+            </div>
+        </button> -->
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

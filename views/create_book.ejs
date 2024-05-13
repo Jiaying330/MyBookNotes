@@ -1,0 +1,61 @@
+<%- include("partials/header.ejs") %>
+
+<section>
+    <div class="create-book book-card container">
+        <div class="book-card start">
+
+        </div>
+        <div class="create-book flex-container">
+            <div class="create-book grid-container">
+                <form class="create-book" action="/book/create" method="POST">
+                    <div>
+                        Title<br>
+                        <input type="text" id="title" name="title" placeholder="Book Title"> 
+                    </div>
+                    <div>
+                        ISBN<br>
+                        <input type="text" id="isbn" name="isbn" placeholder="Book ISBN">
+                    </div>
+                    <div>
+                        Category<br>
+                        <input type="text" id="category" name="category" placeholder="Book Category">
+                    </div>
+                    <div>
+                        Rating<br>
+                        <input type="number" id="rating" name="rating" min="0" max="10" placeholder="10/10">
+                    </div>
+                    <div class="summary">
+                        Book Summary<br>
+                        <textarea type="text" name="summary" id="summary" rows="10" placeholder="Book Summary"></textarea>
+                    </div>
+                    <div>
+                        Finished? <br>
+                        <input type="checkbox" id="finished" name="finished">
+                    </div>
+                    <div>
+                        <button type="submit" class="nav-item">
+                            Add New Book
+                        </button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="nav actions container">
+        <div class="books actions flex-container">
+            <div>
+                
+            </div>
+            <a href="/">
+                <div class="nav-item">
+                   Cancel
+                </div>
+            </a>
+        </div>
+    </div>
+
+</section>
+
+<%- include("partials/footer.ejs") %>
